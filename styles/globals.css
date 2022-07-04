@@ -16,19 +16,25 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --text-color: #252422;
+}
+
 .app {
-  
+  width: 100vw;
 }
 .video-container {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 .bg-video {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  object-fit: contain;
+  object-fit: cover;
   cursor: none;
 }
 .logo {
@@ -60,18 +66,20 @@ a {
 }
 .cursor {
   display: flex;
+  position: absolute;
   height: 100px;
   width: 100px;
   background-color: white;
   position: absolute;
-  transition: 0ms ease-in;
+  transition: 0s;
   border-radius: 50%;
   pointer-events: none;
   z-index: 2;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   padding: 0 0.5rem;
-  transition: 100ms linear opacity;
+  
+  /* transition: opacity 100ms linear, transform 0ms linear 50ms; */
 }
 
 .cursor span {
@@ -95,14 +103,19 @@ a {
   margin: auto;
 }
 
+main {
+  padding: 0 4rem;
+}
+
 .about-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 3rem 0;
   column-gap: 7rem;
   color: black;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
-  padding: 1rem 6rem;
+  padding: 1rem 0;
   color: #252422;
 }
 
@@ -110,7 +123,7 @@ a {
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  line-height: 2.5rem;
+  line-height: 2.2rem;
 }
 
 .about-text a {
@@ -125,9 +138,72 @@ a {
 .about-logo {
   display: flex;
   font-size: 11rem;
+  line-height: 11rem;
   font-weight: 700;
 }
 
 .about-logo span {
   margin: 0 auto auto auto;
+}
+
+.start-screen {
+  display: flex;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f4f4;
+  animation: screenOpen 1s forwards;
+  animation-timing-function: cubic-bezier(0.29, 1.02, 0.44, 0.88); /* cubic-bezier(0.27, 0.88, 0.55, 0.94); */
+  animation-delay: 1.3s;
+}
+
+.start-title {
+  position: relative;
+  margin: auto;
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 7rem;
+  color: var(--text-color);
+}
+
+.start-title::after {
+  position: absolute;
+  content: '';
+  top: -2rem;
+  left: -2rem;
+  bottom: -2rem;
+  right: -2rem;
+  background-color: #f4f4f4;
+  z-index: 1;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: titleCover 600ms forwards;
+  animation-timing-function: cubic-bezier(0.27, 0.88, 0.55, 0.94);
+  animation-delay: 1s;
+}
+
+
+
+
+@keyframes titleCover {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes screenOpen {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
 }

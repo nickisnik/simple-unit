@@ -1,0 +1,53 @@
+.engagements-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    width: 100vw;
+}
+
+.engagements-header {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin-right: auto;
+}
+
+.engagements-header span {
+    width: max-content;
+    font-weight: 700;
+    padding-right: 0.2rem;
+    line-height: 1.8rem;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+#featured {
+    line-height: 2.5rem;
+    color: white;
+    background-color: var(--text-color);
+}
+
+.engagements-carousel {
+    display: flex;
+    gap: 4rem;
+    margin: 5rem 0;
+    overflow-x: scroll;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    font-size: 2rem;
+    height: 30vh;
+    color: var(--text-color);
+    border: 2px solid grey;
+}
+
+.carousel-item span {
+    font-weight: 600;
+}
+
+.carousel-item p {
+    font-size: 1.2rem;
+}

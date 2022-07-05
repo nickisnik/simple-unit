@@ -3,6 +3,9 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import {motion} from 'framer-motion'
+import Carousel from '../components/carousel'
+import Spotlight from '../components/Spotlight'
+import News from '../components/News'
 
 export default function Home() {
   const [mousePos, setMousePos] = useState({
@@ -28,14 +31,14 @@ export default function Home() {
     hidden: {
       x: mousePos.x - 50,
       y: mousePos.y - 50,
-      scale: 0.3,
+      scale: 1,
       opacity: 0,
       transitionEnd: {
         top: "50%",
         left: "50%",
         x: "-50%",
         y: "-50%",
-        opacity: 1,
+        opacity: 0.999,
         scale: 1,
       }
     },
@@ -49,6 +52,11 @@ export default function Home() {
     }
 
   }
+  
+
+  //const leftConstraint = (carouselRef?.current?.clientWidth - window?.innerWidth) || -1700;
+
+
 
   return (
     <div className='app'>
@@ -74,7 +82,7 @@ export default function Home() {
           className='cursor'
           variants={variants}
           animate={cursorVariant}
-          transition={{type: "spring", mass: 0.1, stiffness: 300}}
+          transition={{type: "spring", mass: 0.1, stiffness: 100}}
           >
         <span>PLAY <br/> REEL</span>
       </motion.div>
@@ -86,7 +94,9 @@ export default function Home() {
       </div>
       
       <div className='start-screen'>
-        <span className='start-title'>SIMPLE <br/>/ UNIT</span>
+        <span className='start-title'>
+          <span id="start-top">SIMPLE</span> <br/>/ <span id="start-bottom">UNIT</span>
+        </span>
         <div className='start-title-cover'></div>
       </div>
 
@@ -132,39 +142,11 @@ export default function Home() {
 
 
         </section>
+        
+        <Carousel />
+        <Spotlight />
+        <News />
 
-        <section className='engagements-wrapper'>
-          <header className='engagements-header'>
-            <span id="featured">FEATURED</span>
-            <span>ENGAGEMENTS</span>
-          </header>
-          <motion.div drag="x" dragConstraints={{ left: -500, right: 0 }} className='engagements-carousel'>
-            <div className='carousel-item'>
-              <span>Google</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>
-            </div>
-            <div className='carousel-item'>
-              <span>Google</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>
-            </div>
-            <div className='carousel-item'>
-              <span>Google</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>
-            </div>
-            <div className='carousel-item'>
-              <span>Google</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>
-            </div>
-            <div className='carousel-item'>
-              <span>Google</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>
-            </div>
-            <div className='carousel-item'>
-              <span>Google</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>
-            </div>
-          </motion.div>
-        </section>
       </main>
     </div>
   )

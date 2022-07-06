@@ -52,6 +52,8 @@ export default function Home() {
     }
 
   }
+  const bgVideoRef = useRef(null)
+  const showcaseVideoRef = useRef(null)
   
 
   //const leftConstraint = (carouselRef?.current?.clientWidth - window?.innerWidth) || -1700;
@@ -86,11 +88,14 @@ export default function Home() {
           >
         <span>PLAY <br/> REEL</span>
       </motion.div>
-        <video  className='bg-video'
+        <motion.video  className='bg-video'
+                ref={bgVideoRef}
+                onViewportEnter={() => bgVideoRef?.current?.play()}
+                onViewportLeave={() => bgVideoRef?.current?.pause()}
                 onMouseMove={(e) => {handleCursor(e)}} src="/video.mp4" autoPlay muted loop
                 onMouseEnter={() => {setTimeout(() => {setCursorVariant('default')}, 100)}}
                 onMouseLeave={() => {setCursorVariant('hidden')}}
-                ></video>
+                ></motion.video>
       </div>
       
       <div className='start-screen'>
@@ -131,7 +136,15 @@ export default function Home() {
           </div>
           <div className="product-showcase-item">
             <div className='product-img-wrappper'>
-              <video className='apparel-video' width={900} height={1200} src="/apparel.mp4" autoPlay muted loop></video>
+              <motion.video 
+                ref={showcaseVideoRef}
+                onViewportEnter={() => showcaseVideoRef?.current?.play()}
+                onViewportLeave={() => showcaseVideoRef?.current?.pause()}
+                className='apparel-video'
+                width={900} height={1200} src="/apparel.mp4"
+                autoPlay muted loop>
+
+              </motion.video>
               {/* <Image src="/flower3.jpg" width={640} height={950} alt='flower'></Image> */}
             </div>
             <div className='product-text-wrapper'>

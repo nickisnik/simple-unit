@@ -5,7 +5,7 @@
     width: 100%;
     position: relative;
     margin: 10rem 0;
-    padding: 0 4rem;
+    padding: 0 var(--content-padding);
     transition: 500ms linear color;
 }
 
@@ -56,3 +56,22 @@
     position: sticky;
     top: 0;
 } */
+
+@media only screen and (max-width: 1450px) {
+    .spotlight-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 5vh;
+    }
+    .spotlight-vid-wrapper {
+        order: 1;
+    }
+
+    .spotlight-textbox {
+        position: relative;
+        order: 2;
+        font-size: 7vw;
+        line-height: 7vw;
+    }
+}

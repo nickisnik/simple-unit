@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import {motion} from 'framer-motion'
-import Carousel from '../components/carousel'
+import Carousel from '../components/Carousel'
 import Spotlight from '../components/Spotlight'
 import News from '../components/News'
 

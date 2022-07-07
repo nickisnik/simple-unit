@@ -16,10 +16,13 @@ const Spotlight = () => {
         let intervalFn;
         const startViewCheck = () => {
             intervalFn = setInterval(() => {
-                const clientRectObj = reference.current.getBoundingClientRect();
+                if(!reference.current) {return}
+                const clientRectObj = reference?.current?.getBoundingClientRect();
                 const distanceFromTop = clientRectObj.top;
                 const distanceFromBottom = clientRectObj.bottom
                 const elementHeight = clientRectObj.height;
+                // dark color change triggers if at least half of the element
+                // is in the viewport and vice versa for bright color
                 if(distanceFromTop < elementHeight / 2 || distanceFromBottom > elementHeight / 2) {
                     changeTheme('#f9cdcd', '#252422')
                 } 
@@ -63,6 +66,8 @@ const Spotlight = () => {
         onViewportLeave={() => {
             /* changeTheme('#252422', '#f4f4f4') */
             colorInvert.stopViewCheck()
+            changeTheme('#252422', '#f4f4f4')
+
             /* clearInterval(intervalFn) */
         }}>
         <div className='spotlight-textbox'>

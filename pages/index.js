@@ -65,7 +65,7 @@ export default function Home() {
       <Head>
         <title>SIMPLE/UNIT</title>
       </Head>
-      <header className='nav-bar'>
+      <nav className='nav-bar'>
         <div className='logo'><span>SIMPLE/UNIT</span></div>
         <ul className='nav-bar__links'>
           <li className="nav-bar__link">WORK</li>
@@ -76,8 +76,8 @@ export default function Home() {
           <li className="nav-bar__link">CAREERS</li>
           <li className="nav-bar__link">CONTACT</li>
         </ul>
-        <div className='menu-btn'><span>ooo</span></div>
-      </header>
+        <div className='menu-btn'><span>MENU</span></div>
+      </nav>
       
       <div className="video-container">
       <motion.div 
@@ -92,7 +92,7 @@ export default function Home() {
                 ref={bgVideoRef}
                 onViewportEnter={() => bgVideoRef?.current?.play()}
                 onViewportLeave={() => bgVideoRef?.current?.pause()}
-                onMouseMove={(e) => {handleCursor(e)}} src="/video.mp4" autoPlay muted loop
+                onMouseMove={(e) => {handleCursor(e)}} src="/video2.mp4" autoPlay muted loop
                 onMouseEnter={() => {setTimeout(() => {setCursorVariant('default')}, 100)}}
                 onMouseLeave={() => {setCursorVariant('hidden')}}
                 ></motion.video>
@@ -161,6 +161,10 @@ export default function Home() {
         <News />
 
       </main>
+      <footer>
+        <span>S/U</span>
+        <span>Like my work? Let's collaborate! <br/> Contact me at nikita.nikolenko@gmail.com</span>
+      </footer>
     </div>
   )
 }

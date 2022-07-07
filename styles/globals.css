@@ -50,6 +50,7 @@ a {
 .logo {
   display: flex;
   font-size: 1.7rem;
+  line-height: 1.7rem;
   font-weight: 700;
   padding-bottom: 5px;
 }
@@ -59,12 +60,13 @@ a {
 .nav-bar {
   display: flex;
   z-index: 2;
-  padding: 2.2rem var(--content-padding) 0 var(--content-padding);
+  padding: 2.2rem var(--content-padding) 2.2rem var(--content-padding);
   justify-content: space-between;
   color: white;
   position: absolute;
   width: 100%;
-  font-size: 15px;
+  font-size: 0.7rem;
+  
   font-weight: 600;
 }
 
@@ -72,9 +74,52 @@ a {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  line-height: 0.7rem;
   gap: 4rem;
   margin-right: 6rem;
 }
+
+.nav-bar__link {
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-bar__link:hover::after {
+ animation: out 300ms linear forwards;
+}
+
+@keyframes out {
+  from {
+    margin-right: 100%;
+  }
+
+  to{
+    margin-right: 0%;
+  }
+}
+
+.nav-bar__link::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: in 300ms linear forwards;
+  border-bottom: 1px solid white;
+}
+
+@keyframes in {
+  from {
+    margin-left: 0%;
+  }
+
+  to {
+    margin-left: 100%;
+  }
+}
+
 .cursor {
   display: flex;
   position: absolute;
@@ -109,6 +154,7 @@ a {
 .menu-btn {
   display: flex;
   margin-right: 2rem;
+  cursor: pointer;
 }
 .menu-btn span {
   margin: auto;
@@ -223,6 +269,21 @@ main {
   }
 }
 
+footer {
+  background-color: var(--text-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4rem var(--content-padding);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+footer span {
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
 
 
 @media only screen and (max-width: 1450px) {
@@ -261,5 +322,13 @@ main {
   .start-title {
     font-size: 6rem;
     line-height: 6rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
   }
 }

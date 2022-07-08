@@ -163,7 +163,7 @@ export default function Home() {
       </main>
       <footer>
         <span>S/U</span>
-        <span>Like my work? Let's collaborate! <br/> Contact me at nikita.nikolenko@gmail.com</span>
+        <span>Like my work? Contact me! <br/> You can reach me at nikita.nikolenko@gmail.com</span>
       </footer>
     </div>
   )

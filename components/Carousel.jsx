@@ -18,9 +18,9 @@ const Carousel = () => {
 
 
   const carouselList = [1, 2, 3, 4, 5]
-  const carouselItem = carouselList.map((item) => {
+  const carouselItem = carouselList.map((item, index) => {
     return (
-      <div className='carousel-item'>
+      <div className='carousel-item' key={index}>
         <span className='carousel-brand-logo'>BRAND LOGO</span>
         <span className='carousel-brand-name'>Google</span>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>

@@ -8,7 +8,7 @@ const News = () => {
 
   const newsItemArr = [1, 2, 3, 4, 5, 6, 7, 8];
 
-  const newsItem = newsItemArr.map((item) => {
+  const newsItem = newsItemArr.map((item, index) => {
     return (
         <motion.a
            className='news-item'
@@ -16,6 +16,7 @@ const News = () => {
            whileInView={{opacity: 1}}
            viewport={{once: true}}
            transition={{ duration: 0.4}}
+           key={index}
            >
           <div className='news-photo-wrapper'>
             <Image src="/news1.jpg" alt='news-img' width={1000} height={800}></Image>

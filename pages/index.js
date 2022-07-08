@@ -118,7 +118,7 @@ export default function Home() {
         <section className='product-showcase-list'>
           <div className="product-showcase-item">
             <div className='product-img-wrappper'>
-              <Image src="/flower1.jpg" width={900} height={1200}></Image>{/* <img src="/flower1.jpg" alt="" /> */}
+              <img src="/flower1.jpg" /* width={900} height={1200} */></img>{/* <img src="/flower1.jpg" alt="" /> */}
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Adventure</span>
@@ -127,7 +127,7 @@ export default function Home() {
           </div>
           <div className="product-showcase-item">
             <div className='product-img-wrappper'>
-              <Image src="/flower2.jpg" width={900} height={1200}></Image>{/* <img src="/flower2.jpg" alt="" /> */}
+              <img src="/flower2.jpg" /* width={900} height={1200} */></img>{/* <img src="/flower2.jpg" alt="" /> */}
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Nature</span>

@@ -10,7 +10,7 @@
 }
 
 .spotlight-vid-wrapper {
-    /*  */
+    overflow: hidden;
 }
 
 .spotlight-vid-wrapper video {
@@ -66,6 +66,11 @@
     }
     .spotlight-vid-wrapper {
         order: 1;
+        max-height: 110vh;
+    }
+
+    .spotlight-vid-wrapper video {
+        height: 100%;
     }
 
     .spotlight-textbox {

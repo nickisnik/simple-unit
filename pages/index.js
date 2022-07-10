@@ -31,6 +31,8 @@ export default function Home() {
     hidden: {
       x: mousePos.x - 50,
       y: mousePos.y - 50,
+      top:0,
+      left:0,
       scale: 1,
       opacity: 0,
       transitionEnd: {

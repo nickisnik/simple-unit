@@ -10,12 +10,17 @@ const Carousel = () => {
   const carouselRef = useRef(null);
 
   const [leftConstraint, setLeftConstrait] = useState(-1700);
+  const [cursorVariant, setCursorVariant] = useState('start');
 
   useEffect(() => {
     setLeftConstrait(- carouselRef?.current?.clientWidth + window?.innerWidth - 150)
   }, [carouselRef]);
 
-
+//testing
+useEffect(() => {
+  console.log(cursorVariant)
+}, [cursorVariant])
+//
 
   const carouselList = [1, 2, 3, 4, 5]
   const carouselItem = carouselList.map((item, index) => {
@@ -28,35 +33,47 @@ const Carousel = () => {
     )
   })
 
-  const [cursorVariant, setCursorVariant] = useState('start');
 
   const handleCursor = (e) => {
-    console.log(e.nativeEvent.offsetX)
+    const clientRectObj = wrapperRef?.current?.getBoundingClientRect();
+    if(cursorVariant === 'hidden') {return}
+    if(e.clientX - clientRectObj.left < 0 || e.clientY - clientRectObj.top < 0) {
+      setCursorVariant('hidden')
+    }
+    console.log(Math.floor(e.clientY - clientRectObj.top), cursorVariant)
     setMousePos({
-      x: e.nativeEvent.layerX,
-      y: e.nativeEvent.layerY
+      x: e.clientX - clientRectObj.left,
+      y: Math.floor(e.clientY - clientRectObj.top)
     })
   }
   const variants = {
     default: {
-      x: mousePos.x -100,
-      y: mousePos.y -100,
+      x: mousePos.x -50,
+      y: mousePos.y -50,
       opacity: 1,
       top:0,
       left:0
     },
+    active: {
+      x: mousePos.x -50,
+      y: mousePos.y -50,
+      opacity: 1,
+      top:0,
+      left:0,
+      scale: 0.5,
+    },
     hidden: {
-      x: mousePos.x - 50,
-      y: mousePos.y - 50,
-      scale: 1,
       opacity: 0,
+      top: 0,
+      left: 0,
+      x: mousePos.x -50,
+      y: mousePos.y -50,
       transitionEnd: {
         top: "50%",
-        left: "50%",
+        left: "90%",
         x: "-50%",
         y: "-50%",
         opacity: 0.999,
-        scale: 1,
       }
     },
     start: {
@@ -65,10 +82,12 @@ const Carousel = () => {
       x: "-50%",
       y: "-50%",
       opacity: 1,
-      scale: 1,
     }
 
   }
+
+  const wrapperRef = useRef(null);
+
 
   return (
     <section className='engagements-wrapper'>
@@ -77,22 +96,29 @@ const Carousel = () => {
             <span>ENGAGEMENTS</span>
           </header>
           <div className="carousel-wrapper"
-              /* onMouseMove={(e) => {handleCursor(e)}} src="/video2.mp4" autoPlay muted loop
-              onMouseEnter={() => {setTimeout(() => {setCursorVariant('default')}, 100)}}
-              onMouseLeave={() => {setCursorVariant('hidden')}}  */ >
+              onMouseDown={() => {setCursorVariant('active')}}
+              onMouseUp={() => {setCursorVariant('default')}}
+              ref={wrapperRef}
+              onMouseMove={(e) => {handleCursor(e)}}
+              onMouseEnter={() => {setCursorVariant('default')}}
+              onMouseLeave={() => {setCursorVariant('hidden'); console.log('mouse left')}}  >
             <motion.div
-             
-             ref={carouselRef} drag="x" dragConstraints={{ left: leftConstraint, right: 0 }} className='engagements-carousel'>
+              className='engagements-carousel'
+              ref={carouselRef}
+              drag="x"
+              dragConstraints={{ left: leftConstraint, right: 0 }}
+              
+              >
               {carouselItem}
-            
             </motion.div>
-          <motion.div 
-            className='brand-cursor'
-            variants={variants}
-            animate={cursorVariant}
-            transition={{type: "spring", mass: 0.1, stiffness: 100}}>
-            
-          </motion.div>
+              <motion.div 
+                className={cursorVariant === 'active' ? "brand-cursor active-cursor" : "brand-cursor"}
+                variants={variants}
+                animate={cursorVariant}
+                transition={{type: "spring", mass: 0.1, stiffness: 100}}>
+                <span>{cursorVariant === 'active' ? '' : 'DRAG'}</span>
+              </motion.div>
+          
           </div>
         </section>
   )

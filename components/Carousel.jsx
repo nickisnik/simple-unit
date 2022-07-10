@@ -47,7 +47,8 @@ const Carousel = () => {
       y: mousePos.y -50,
       opacity: 1,
       top:0,
-      left:0
+      left:0,
+      display: "flex"
     },
     active: {
       x: mousePos.x -50,

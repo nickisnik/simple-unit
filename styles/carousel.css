@@ -99,8 +99,9 @@
 }
 
 .brand-cursor {
-    display: flex;
+    display: flex !important;
     position: absolute;
+    justify-content: center;
     top: 50%;
     left: 50%;
     width: 100px;
@@ -170,9 +171,12 @@
 
 @media only screen and (max-width: 750px) {
     .brand-cursor {
-        display: none;
+        display: none !important;
     }
     .active-cursor {
-        display: none;
+        display: none !important;
+    }
+    .carousel-wrapper {
+        cursor: pointer;
     }
 }

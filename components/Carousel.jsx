@@ -16,11 +16,6 @@ const Carousel = () => {
     setLeftConstrait(- carouselRef?.current?.clientWidth + window?.innerWidth - 150)
   }, [carouselRef]);
 
-//testing
-useEffect(() => {
-  console.log(cursorVariant)
-}, [cursorVariant])
-//
 
   const carouselList = [1, 2, 3, 4, 5]
   const carouselItem = carouselList.map((item, index) => {
@@ -40,7 +35,7 @@ useEffect(() => {
     if(e.clientX - clientRectObj.left < 0 || e.clientY - clientRectObj.top < 0) {
       setCursorVariant('hidden')
     }
-    console.log(Math.floor(e.clientY - clientRectObj.top), cursorVariant)
+    
     setMousePos({
       x: e.clientX - clientRectObj.left,
       y: Math.floor(e.clientY - clientRectObj.top)
@@ -78,7 +73,7 @@ useEffect(() => {
     },
     start: {
       top: "50%",
-      left: "50%",
+      left: "90%",
       x: "-50%",
       y: "-50%",
       opacity: 1,

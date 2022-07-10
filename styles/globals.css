@@ -288,7 +288,7 @@ footer span {
   border-radius: 25px;
   /* border: 1px solid; */
   /* transition-delay: 0.2s; */
-  outline: 1px solid black;
+  outline: 1px solid var(--text-color);
   transition: 0.4s linear;
   padding: 0.4rem 1.2rem;
   font-size: 0.7rem;
@@ -301,7 +301,7 @@ footer span {
 .btn:hover {
   border-color: var(--background);
   outline-color: var(--background);
-  color: white;
+  color: var(--background);
 }
 .btn:hover::after {
   background-color: var(--text-color);

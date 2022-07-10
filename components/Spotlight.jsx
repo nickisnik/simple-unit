@@ -72,11 +72,11 @@ const Spotlight = () => {
         }}>
         <div className='spotlight-textbox'>
                 <span>
-                    BASIC/DEPT® HELPS BRANDS ●
+                    SIMPLE/UNIT BRINGS PASSION ● <br/>
                     <motion.span    
                         
                         >
-                        CONNECT W/ CULTURE
+                        TO SPORTS AND TRAVEL 
                     </motion.span>
                 </span>
                 <span id="spotlight-subtitle">ADWEEK (AGENCY SPOTLIGHT)</span>

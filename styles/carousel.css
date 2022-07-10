@@ -108,6 +108,7 @@
     background-color: pink;
     border-radius: 50%;
     cursor: none;
+    font-size: 1rem;
     pointer-events: none;
 }
 

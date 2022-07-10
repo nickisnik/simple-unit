@@ -90,7 +90,11 @@ export default function Home() {
           >
         <span>PLAY <br/> REEL</span>
       </motion.div>
-        <motion.video priority={true}  className='bg-video'
+        <motion.video
+                onLoadedData={() => {console.log('Loaded video! :)')}}
+                priority="true"
+                playsInline
+                className='bg-video'
                 ref={bgVideoRef}
                 onViewportEnter={() => bgVideoRef?.current?.play()}
                 onViewportLeave={() => bgVideoRef?.current?.pause()}
@@ -120,7 +124,7 @@ export default function Home() {
         <section className='product-showcase-list'>
           <div className="product-showcase-item">
             <div className='product-img-wrappper'>
-              <Image priority={true} src="/flower1.webp" width={900} height={1200}></Image>{/* <img src="/flower1.jpg" alt="" /> */}
+              <Image priority="true" src="/flower1.webp" width={900} height={1200}></Image>{/* <img src="/flower1.jpg" alt="" /> */}
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Adventure</span>
@@ -129,7 +133,7 @@ export default function Home() {
           </div>
           <div className="product-showcase-item">
             <div className='product-img-wrappper'>
-              <Image priority={true} src="/flower2.webp" width={900} height={1200}></Image>{/* <img src="/flower2.jpg" alt="" /> */}
+              <Image priority="true" src="/flower2.webp" width={900} height={1200}></Image>{/* <img src="/flower2.jpg" alt="" /> */}
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Nature</span>

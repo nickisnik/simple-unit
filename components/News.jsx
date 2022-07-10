@@ -19,7 +19,7 @@ const News = () => {
            key={index}
            >
           <div className='news-photo-wrapper'>
-            <Image priority={true} src="/news1.webp" alt='news-img' width={1000} height={800}></Image>
+            <Image priority="true" src="/news1.webp" alt='news-img' width={1000} height={800}></Image>
           </div>
           <div className='news-item-title-wrapper'>
             <span className='news-item-title'>BASIC AGENCY BLAH/BLAH</span>

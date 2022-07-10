@@ -90,7 +90,7 @@ export default function Home() {
           >
         <span>PLAY <br/> REEL</span>
       </motion.div>
-        <motion.video  className='bg-video'
+        <motion.video priority={true}  className='bg-video'
                 ref={bgVideoRef}
                 onViewportEnter={() => bgVideoRef?.current?.play()}
                 onViewportLeave={() => bgVideoRef?.current?.pause()}
@@ -112,7 +112,7 @@ export default function Home() {
         <section className='about-wrapper'>
           <div className='about-text'>
             <p>SIMPLE/UNIT is a global branding and digital design agency building products, services, and eCommerce experiences that turn cultural values into company value.</p>
-            <a href="">SEE THE WORK</a>
+            <a href="" className='btn'>SEE THE WORK</a>
           </div>
           <div className='about-logo'><span>S/U®</span></div>
         </section>
@@ -120,7 +120,7 @@ export default function Home() {
         <section className='product-showcase-list'>
           <div className="product-showcase-item">
             <div className='product-img-wrappper'>
-              <img src="/flower1.jpg" /* width={900} height={1200} */></img>{/* <img src="/flower1.jpg" alt="" /> */}
+              <Image priority={true} src="/flower1.webp" width={900} height={1200}></Image>{/* <img src="/flower1.jpg" alt="" /> */}
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Adventure</span>
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
           <div className="product-showcase-item">
             <div className='product-img-wrappper'>
-              <img src="/flower2.jpg" /* width={900} height={1200} */></img>{/* <img src="/flower2.jpg" alt="" /> */}
+              <Image priority={true} src="/flower2.webp" width={900} height={1200}></Image>{/* <img src="/flower2.jpg" alt="" /> */}
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Nature</span>

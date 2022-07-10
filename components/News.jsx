@@ -19,7 +19,7 @@ const News = () => {
            key={index}
            >
           <div className='news-photo-wrapper'>
-            <Image src="/news1.jpg" alt='news-img' width={1000} height={800}></Image>
+            <Image priority={true} src="/news1.webp" alt='news-img' width={1000} height={800}></Image>
           </div>
           <div className='news-item-title-wrapper'>
             <span className='news-item-title'>BASIC AGENCY BLAH/BLAH</span>
@@ -33,7 +33,7 @@ const News = () => {
 
       <header className='news-header'>
         <span className='news-header-title'>FEATURED <br/> NEWS</span>
-        <button className='news-btn'>VIEW ALL</button>
+        <a href='' className='news-btn btn'>VIEW ALL</a>
       </header>
 
       <section className='news-list'>

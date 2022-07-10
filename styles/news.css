@@ -10,6 +10,7 @@
 .news-header {
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
 }
 
 .news-header-title {
@@ -18,19 +19,10 @@
     font-weight: 700;
 }
 
-.news-btn {
+/* .news-btn {
     margin: auto 0;
-    height: fit-content;
-    cursor: pointer;
-    border-color: var(--text-color);
-    color: var(--text-color);
-    background: none;
-    border-radius: 25px;
-    border: 1px solid;
-    padding: 0.4rem 1.2rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-}
+    
+} */
 
 .news-list {
     display: flex;

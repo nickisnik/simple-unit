@@ -80,7 +80,7 @@ const Spotlight = () => {
                     </motion.span>
                 </span>
                 <span id="spotlight-subtitle">ADWEEK (AGENCY SPOTLIGHT)</span>
-                <button className='spotlight-btn'>ABOUT US</button>
+                <a href='' className='btn'>ABOUT US</a>
 
         </div>
         <div className="spotlight-vid-wrapper">

@@ -186,15 +186,6 @@ main {
   line-height: 2.2rem;
 }
 
-.about-text a {
-  font-size: 0.8rem;
-  border: 2px solid #252422;
-  width: max-content;
-  padding: 0 1rem;
-  height: min-content;
-  border-radius: 25px;
-}
-
 .about-logo {
   display: flex;
   font-size: 11rem;
@@ -282,6 +273,57 @@ footer span {
   width: fit-content;
   height: fit-content;
   margin: auto 0;
+}
+
+.btn {
+  display: inline;
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  line-height: 0.7rem;
+  cursor: pointer;
+  border-color: var(--text-color);
+  color: var(--text-color);
+  background: none;
+  border-radius: 25px;
+  /* border: 1px solid; */
+  /* transition-delay: 0.2s; */
+  outline: 1px solid black;
+  transition: 0.4s linear;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  border-color: var(--background);
+  outline-color: var(--background);
+  color: white;
+}
+.btn:hover::after {
+  background-color: var(--text-color);
+  transform: scaleY(1);
+}
+
+.btn::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.2rem);
+  transition: 300ms linear;
+  height: calc(100% + 0.2rem);
+  transform: scaleY(0);
+  outline: 1px solid var(--background);
+  transform-origin: bottom;
+  /* right: 0; */
+  z-index: -1;
+
+  /* bottom: 0; */
+  /* background-color: rgb(183, 103, 103); */
 }
 
 

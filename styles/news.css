@@ -10,7 +10,7 @@
 .news-header {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .news-header-title {

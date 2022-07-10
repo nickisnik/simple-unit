@@ -115,7 +115,7 @@ export default function Home() {
 
         <section className='about-wrapper'>
           <div className='about-text'>
-            <p>SIMPLE/UNIT is a global branding and digital design agency building products, services, and eCommerce experiences that turn cultural values into company value.</p>
+            <p>SIMPLE/UNIT is a fictional global brand. It specializes in travel/sports phototography and web design. Our content and animations bring your website to life. </p>
             <a href="" className='btn'>SEE THE WORK</a>
           </div>
           <div className='about-logo'><span>S/U®</span></div>
@@ -128,7 +128,7 @@ export default function Home() {
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Adventure</span>
-              <p className='product-description'>Amazing scenery<br/>Beautiful landscapes<br/>gigantic mountains</p>
+              <p className='product-description'>TOP-NOTCH CONTENT<br/>BREATHTAKING DESIGN</p>
             </div>
           </div>
           <div className="product-showcase-item">
@@ -137,7 +137,7 @@ export default function Home() {
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Nature</span>
-              <p className='product-description'>Amazing scenery<br/>Beautiful landscapes<br/>gigantic mountains</p>
+              <p className='product-description'>TOP-NOTCH CONTENT<br/>BREATHTAKING DESIGN</p>
             </div>
           </div>
           <div className="product-showcase-item">
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
             <div className='product-text-wrapper'>
               <span className='product-title'>Sports</span>
-              <p className='product-description'>Amazing scenery<br/>Beautiful landscapes<br/>gigantic mountains</p>
+              <p className='product-description'>TOP-NOTCH CONTENT<br/>BREATHTAKING DESIGN</p>
             </div>
           </div>
 
@@ -169,7 +169,7 @@ export default function Home() {
       </main>
       <footer>
         <span>S/U</span>
-        <span>Like my work? Contact me! <br/> You can reach me at nikita.nikolenko@gmail.com</span>
+        <span>Like my work? Contact me <br/> <a className='mail-link' target="_blank" rel='noreferrer' href="mailto:nikita.nikolenko@gmail.com">nikita.nikolenko@gmail.com</a></span>
       </footer>
     </div>
   )

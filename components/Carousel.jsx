@@ -21,8 +21,8 @@ const Carousel = () => {
   const carouselItem = carouselList.map((item, index) => {
     return (
       <div className='carousel-item' key={index}>
-        <span className='carousel-brand-logo'>BRAND LOGO</span>
-        <span className='carousel-brand-name'>Google</span>
+        <span className='carousel-brand-logo'>BRAND LOGO </span>
+        <span className='carousel-brand-name'>BRAND NAME</span>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum assumenda dolores error animi vel blanditiis esse ipsum, tempora eos? Animi suscipit rerum placeat inventore iste, possimus repudiandae aliquid amet sunt.</p>
       </div>
     )
